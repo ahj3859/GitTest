@@ -15,3 +15,15 @@ notifications:
     - ahj3859@gmail.com
   slack:
     secure: aew/fppxQBdtJLRgrlejdc8AMzS3rLI/vORmGBC4Sm3s8kRGF5PJkQ6bJlP9SQVxlzNFEwq61hcpR0GURoS+t/VsFTNd1iQ/zjOWR3jUBFc4gV8/5+VN4QF9MKRZtI81uZrv58jwvcssJeRxfG3lLy0SfG4duDzOCkAXwYns6AEK3gOe8CJ1+jX6mKQduEh49R+TXYtyonQZlI+SCqNgwgw345vB6zR9be2ghEQEQaSpMCih5AmYkzkCVcO8xTw/swbO/aUtX18ggWowGYKql8q3+Jhf0qLbvQXBiq3/hEyfyFxnvtVcvbkOfc1BR1e1UX4eCF3B0bPyqxWG3TxMnzgywtvkn1Sb0gxOqRQyT5c9kQuAc68bUQPnTKuLanX+ECELI9mCrS+4rq7ITzb1bxKkLsjBKoKXL4slvwWIf2B53xNfhcBv0TpLAsMOoQZQ+6iKBPCRgqtwONg1ZRdQEyPE14y/jQofAMgp/Zl6CooXtRdhW41vpqkpWT5S5Rp2tY+XjCiVik+BYjI7pU55z/mWPJ5FisiA1NsbgHt7uuT/LHBysvpkQ58iM8Z5HLnrRwwu7uFwtAXec4pPa/jyEZH3kfN9cAKA0YJinNavZMY82nK1jmK9iyECW6MdvW79DfK907DRPRDFKeBH395bkZWycLW99qCmb8EH07FQMlQ=
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: cupid-springboot-webservice-deploy # 생성한 S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: public_read
+    wait-until-deployed: true
+    on:
+      repo: ahj3859/GitTest #Github 주소
+      branch: master
