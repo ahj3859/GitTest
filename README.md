@@ -1,4 +1,4 @@
-# GitTest
+# GitTest [![Build Status](https://travis-ci.com/ahj3859/GitTest.svg?branch=master)](https://travis-ci.com/ahj3859/GitTest)
 Test environment for cupid
 
 **troubleshooting**
